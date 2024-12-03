@@ -6,12 +6,13 @@
 #include <string>
 #include <fstream>
 
-int GetWordsCount(std::ifstream fin, std::string str)
+int GetWordsCount(std::string& fname)
 {
-	if (fin)
+	std::ifstream f(fname);
+	if (f)
 	{
 		int result = 0;
-		while (fin >> str)
+		while (f >> fname)
 			result++;
 		return result;
 	}
