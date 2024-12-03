@@ -6,13 +6,14 @@
 #include <string>
 #include <fstream>
 
-int GetWordsCount(std::string& fname)
+int GetWordsCount(std::string fname)
 {
-	std::ifstream f(fname);
-	if (f)
+	std::ifstream f(fname);			// открытие файла
+	if (f)							// проверка на то, что файл открыт
 	{
+		std::string word;
 		int result = 0;
-		while (f >> fname)
+		while (f >> word)			// считывание слов из файла
 			result++;
 		return result;
 	}
